@@ -1,27 +1,25 @@
 'use strict';
-hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
-let seattle = {
+const seattle = {
     name: 'seattle',
     /*Stores the min/max hourly 
     customers, and the average 
     cookies per customer, in object 
     properties
 */
-    minCusts: 23,
-    maxCusts: 65,
+    min: 23,
+    max: 65,
     avgCusts: 6.3,
     /*Uses a method of that object to 
     generate a random number of customers
      per hour. Objects/Math/random*/
-    customRandom: function coustomerRandomly(minCusts,maxCusts) {
+    customRandom: function (min, max) {
         {
-            minCusts = Math.ceil(minCusts);
-            maxCusts = Math.floor(maxCusts);
-            return Math.floor(Math.random() * (maxCusts - minCusts) + minCusts);
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
-    
+
     },
     /*Calculate and store the simulated amounts of cookies purchased for each hour at 
     each location using average cookies 
@@ -35,33 +33,33 @@ let seattle = {
     /*Store the results for each location in a separate array… 
     perhaps as a property of the object representing that location
     Location 	Min / Cust 	Max / Cust 	Avg Cookie / Sale*/
-    infoArray: [`The location name ${this.name}, minimum coustomer per hour is${this.minCusts},
-    maximum coustomer per hour is ${this.maxCusts},Ther average for visitores is  ${this.avgCusts}`],
+    infoArray :function(){return['The location name ' + this.name + ' minimum coustomer per hour is ' + this.min+ ' maximum coustomer per hour is ' + this.max +' Thier average for visitores is '+ this.avgCusts]},
+
     /*Display the values of each array as unordered lists in the browser*/
-disply : [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`],
-/*Calculating the sum of these hourly totals; your 
-output for each location should look like this:*/
-totaloutpu : function sumout(){
-    for (let a=0; a<hours.lenght ;a++){
-        let sum=0;
-        sum+=this.amountOfCookies;
-    }
-    //Total: 875 cookies
-    return [`Total: ${this.sum} cookies`];
-},
+disply: function () { [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
+    /*Calculating the sum of these hourly totals; your 
+    output for each location should look like this:*/
+    totaloutput: function () {
+        for (let a = 0; a < hours.lenght; a++) {
+            let sum = 0;
+            sum += this.amountOfCookies;
+        }
+        //Total: 875 cookies
+        return [`Total: ${this.sum} cookies`];
+    },
 
 }
+console.log(seattle.infoArray());
+console.log(seattle);
 ////////////////////////////////////
-let tokyo = {
+const tokyo = {
     name: 'Tokyo',
-    minCustt: 3,
-    maxCustt: 24,
+    min: 3,
+    max: 24,
     avgCustt: 1.2,
-    customRandomt: function coustomerRandomlyt(minCustt, maxCustt) {
+    customRandomt: function (min, max) {
         {
-            minCustt = Math.ceil(minCustt);
-            maxCustt = Math.floor(maxCustt);
-            return Math.floor(Math.random() * (maxCustt - minCustt) + minCustt);
+            return Math.floor(Math.random() * (max - min + 1) + min)
         }
     },
     amountOfCookies: function Generatet() {
@@ -70,21 +68,20 @@ let tokyo = {
             return this.amount[i];
         }
     },
-    infoArray: [`The location name ${this.name}, minimum coustomer per hour is${this.minCustt},
-    maximum coustomer per hour is ${this.maxCustt},Ther average for visitores is  ${this.avgCustt}`],
-    disply : [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`],
+    infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustt}`]},
+    disply: function () { return [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
 }
+console.log(tokyo);
+console.log(tokyo.infoArray())
 /////////////////////////////////////////
 let dubai = {
-    name:'Dubai',
-    minCustd: 11,
-    maxCustd: 38,
+    name: 'Dubai',
+    min: 11,
+    max: 38,
     avgCustd: 3.7,
-    customRandomd: function coustomerRandomlyd(minCustd, maxCustd) {
+    customRandomd: function (minC, max) {
         {
-            minCustd = Math.ceil(minCustd);
-            maxCustd = Math.floor(maxCustd);
-            return Math.floor(Math.random() * (maxCustd - minCustd) + minCustd);
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
     },
     amountOfCookies: function generated() {
@@ -93,30 +90,29 @@ let dubai = {
             return this.amount[i];
         }
     },
-    infoArray: [`The location name ${this.name}, minimum coustomer per hour is${this.minCustd},
-    maximum coustomer per hour is ${this.maxCustd},Ther average for visitores is  ${this.avgCustd}`],
-    disply : [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`],
+    infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustd}`]},
+    disply: function () { return [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
 
-    totaloutpu : function sumout(){
-        for (let a=0; a<hours.lenght ;a++){
-            let sum=0;
-            sum+=this.amountOfCookies;
+    totaloutpu: function sumout() {
+        for (let a = 0; a < hours.lenght; a++) {
+            let sum = 0;
+            sum += this.amountOfCookies;
         }
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
 }
+console.log(dubai);
+console.log(dubai.infoArray());
 ///////////////////////////////////////
-let paris = {
-    name:'Paris',
-    minCustp: 20,
-    maxCustp: 38,
+const paris = {
+    name: 'Paris',
+    min: 20,
+    max: 38,
     avgCustp: 2.3,
-    customRandomp: function coustomerRandomlyp(minCustt, maxCustt) {
+    customRandomp: function (min, max) {
         {
-            minCustp = Math.ceil(minCustp);
-            this.maxCustp = Math.floor(maxCustp);
-            return Math.floor(Math.random() * (this.maxCustp - minCustp) + minCustp);
+            return Math.floor(Math.random() * (max - min + 1) + min)
         }
     },
     amountOfCookies: function Generatep() {
@@ -125,31 +121,29 @@ let paris = {
             return this.amount[i];
         }
     },
-   
 
-    disply : [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`],
-    totaloutpu : function sumout(){
-        for (let a=0; a<hours.lenght ;a++){
-            let sum=0;
-            sum+=this.amountOfCookies;
+
+    disply: function () { return [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
+    totaloutpu: function sumout() {
+        for (let a = 0; a < hours.lenght; a++) {
+            let sum = 0;
+            sum += this.amountOfCookies;
         }
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
-    infoArray: [`The location name ${this.name}, minimum coustomer per hour is${this.minCustp},
-    maximum coustomer per hour is ${this.maxCustp},Ther average for visitores is  ${this.avgCustp}`],
+    infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustp}`]},
 }
+console.log(paris);
 ////////////////////////////////////
-let lima = {
-    name:'Lima',
-    minCustl: 2,
-    maxCustl: 16,
+const lima = {
+    name: 'Lima',
+    min: 2,
+    max: 16,
     avgCustl: 4.6,
-    customRandoml: function coustomerRandomlyl(minCustl, maxCustl) {
+    customRandoml: function (min, max) {
         {
-            minCustl = Math.ceil(minCustl);
-            maxCustl = Math.floor(maxCustl);
-            return Math.floor(Math.random() * (maxCustl - minCustl) + minCustl);
+            return Math.floor(Math.random() * (max - min + 1) + min)
         }
     },
     amountOfCookies: function Generatel() {
@@ -158,16 +152,17 @@ let lima = {
             return this.amount[i];
         }
     },
-    disply : [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`],
+    disply: function () { return [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
 
-    totaloutpu : function sumout(){
-        for (let a=0; a<hours.lenght ;a++){
-            let sum=0;
-            sum+=this.amountOfCookies;
+    totaloutpu: function sumout() {
+        for (let a = 0; a < hours.lenght; a++) {
+            let sum = 0;
+            sum += this.amountOfCookies;
         }
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
-    infoArray: [`The location name ${this.name}, minimum coustomer per hour is${this.minCustl},
-    maximum coustomer per hour is ${this.maxCustl},Ther average for visitores is  ${this.avgCustl}`],
+    infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustl}`]},
 }
+console.log(lima);
+console.log(lima.infoArray());
