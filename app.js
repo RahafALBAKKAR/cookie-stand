@@ -47,7 +47,31 @@ disply: function () { [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} coo
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
+render :function(){/*  <!-- <h2>seattle</h2>
+    <p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+</ul> --> </p>*/
+let hElemnet =document.createElement('h2');
+locationProfile.appendChild(hElemnet);
 
+let pElement= document.createElement('p');
+
+
+},
 }
 console.log(seattle.infoArray());
 console.log(seattle);
@@ -70,6 +94,10 @@ const tokyo = {
     },
     infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustt}`]},
     disply: function () { return [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
+render:function(){
+    let h2Elemnet= document.createElement('h2');
+    h2Elemnet.textContent=this.name;
+}
 }
 console.log(tokyo);
 console.log(tokyo.infoArray())
@@ -101,6 +129,10 @@ let dubai = {
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
+    render:function(){
+        let h2Elemnet= document.createElement('h2');
+        h2Elemnet.textContent=this.name;
+    }
 }
 console.log(dubai);
 console.log(dubai.infoArray());
@@ -133,6 +165,10 @@ const paris = {
         return [`Total: ${this.sum} cookies`];
     },
     infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustp}`]},
+    render:function(){
+        let h2Elemnet= document.createElement('h2');
+        h2Elemnet.textContent=this.name;
+    }
 }
 console.log(paris);
 ////////////////////////////////////
@@ -163,6 +199,38 @@ const lima = {
         return [`Total: ${this.sum} cookies`];
     },
     infoArray: function(){return [`The location name ${this.name}, minimum coustomer per hour is ${this.min}, maximum coustomer per hour is ${this.max},Ther average for visitores is  ${this.avgCustl}`]},
-}
+    render:function(){
+        let h2Elemnet= document.createElement('h2');
+        h2Elemnet.textContent=this.name;
+    }}
 console.log(lima);
 console.log(lima.infoArray());
+
+////////////////////////////////////////////////////////////
+let locationProfile =document.getElementById('cookie-stand');
+console.log(locationProfile);
+/* <div id="cookie-stand"> </div>
+     <!-- <h2>seattle</h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+</ul> --> */
+
+seattle.render();
+tokyo.render();
+dubai.render();
+lima.render();
+paris.render();
+
