@@ -15,19 +15,23 @@ const seattle = {
     /*Uses a method of that object to 
     generate a random number of customers
      per hour. Objects/Math/random*/
-    customRandom: function (min, max) {
+    customRandom: function (min,max) {
         {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
         }
 
     },
+
     /*Calculate and store the simulated amounts of cookies purchased for each hour at 
     each location using average cookies 
     purchased and the random number of customers generated*/
-    amountOfCookie: function Generate() {
+    amountOfCookie: function () {
         for (let i = 0; i < hours.lenght; i++) {
-            amount[i] = this.avgCusts * this.customRandom[i];
-            return this.amount[i];
+            let amount=0;
+            amount[i] = this.avgCusts*customRandom(i);
+            return amount;
         }
     },
     /*Store the results for each location in a separate array… 
@@ -36,7 +40,8 @@ const seattle = {
     infoArray :function(){return['The location name ' + this.name + ' minimum coustomer per hour is ' + this.min+ ' maximum coustomer per hour is ' + this.max +' Thier average for visitores is '+ this.avgCusts]},
 
     /*Display the values of each array as unordered lists in the browser*/
-disply: function () { [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} cookies`] },
+disply: function () { for (let i=0; i<hours.length ; i++){
+    return[hours[i] + this.amountOfCookies+ 'cookies'] }},
     /*Calculating the sum of these hourly totals; your 
     output for each location should look like this:*/
     totaloutput: function () {
@@ -47,9 +52,10 @@ disply: function () { [`${hours[i]} : ${this.amountOfCookiesamountOfCookies} coo
         //Total: 875 cookies
         return [`Total: ${this.sum} cookies`];
     },
-render :function(){/*  <!-- <h2>seattle</h2>
+render :function(){/*  <!-- 
+    <h2>seattle</h2>
     <p>
-    <ul>
+      <ul>
         <li></li>
         <li></li>
         <li></li>
@@ -67,14 +73,22 @@ render :function(){/*  <!-- <h2>seattle</h2>
 </ul> --> </p>*/
 let hElemnet =document.createElement('h2');
 locationProfile.appendChild(hElemnet);
+hElemnet.textContent=this.name;
+let pelemnent=document.createElement('p');
+locationProfile.appendChild(pelemnent);
+let ulElement=document.createElement('ul');
+pelemnent.appendChild(ulElement);
 
-let pElement= document.createElement('p');
-
-
-},
+for(let i=0; i<hours.length;i++){
+let lielement =document.createElement('li');
+lielement.textContent=this.disply();
+ulElement.appendChild(lielement);
+}}
 }
 console.log(seattle.infoArray());
 console.log(seattle);
+console.log(seattle.customRandom());
+
 ////////////////////////////////////
 const tokyo = {
     name: 'Tokyo',
@@ -112,7 +126,7 @@ let dubai = {
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
     },
-    amountOfCookies: function generated() {
+    amountOfCookies: function () {
         for (let i = 0; i < hours.lenght; i++) {
             amount[i] = this.avgCustd * this.customRandomd[i];
             return this.amount[i];
