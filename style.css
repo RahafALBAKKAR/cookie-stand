@@ -17,6 +17,6 @@ table {
   
   th {
     background-color: #a49feb;
-    color: white;
-    
+    color: rgb(61, 32, 65);
+    column-rule-style:groove;
   }
