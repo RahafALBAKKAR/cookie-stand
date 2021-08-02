@@ -1,15 +1,15 @@
 'use strict';
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 const shop = document.getElementById('shop');
-const img =document.getElementById('img');
-const seattle = {
-    name: 'seattle',
-    minCust: 23,
-    maxCust: 65,
-    avg: 6.3,
-    cookiesSales: [],
-    total:0,
-    getCookies: function () {
+
+function LocationShop (name,min,max,avg) {
+    this.name=name;
+    this.minCust=min;
+    this.maxCust= max;
+    this.avg=avg;
+    this.cookiesSales= [];
+    this.total=0;
+    this.getCookies=function () {
       
         for (let i = 0; i < hours.length; i++) {
             let randAvgCust=Math.ceil(randomNumber(this.maxCust, this.minCust)*this.avg);
@@ -17,8 +17,8 @@ const seattle = {
         this.total += randAvgCust;
     }
     return this.cookiesSales;
-    },
-    render: function(){
+    };
+   this.render= function(){
 const h2Element = document.createElement('h2');
 h2Element.textContent= this.name;
 shop.appendChild(h2Element);
@@ -33,9 +33,9 @@ for (let i=0; i<hours.length;i++){
 const totalLi=document.createElement('li');
 totalLi.textContent=`Total : ${this.total} cookies`;
 ulElement.appendChild(totalLi);
-},   
-}
-const tokyo = {
+};}
+
+/*const tokyo = {
     name: 'Tokyo',
     minCust: 23,
     maxCust: 65,
@@ -167,7 +167,7 @@ totalLi.textContent=`Total : ${this.total} cookies`;
 ulElement.appendChild(totalLi);
 },   
 }
-seattle.getCookies();
+/*seattle.getCookies();
 seattle.render();
 tokyo.getCookies();
 tokyo.render();
@@ -176,9 +176,7 @@ dubai.render();
 laim.getCookies();
 laim.render();
 paris.getCookies();
-paris.render();
-
-
+paris.render();*/
 
 function randomNumber(min, max) {
     min = Math.ceil(min);
@@ -186,5 +184,15 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-let imgElement=document.createElement('img');
-imgElement.scr=this.img; 
+let seattle = new LocationShop('seattle',23,65,6.3);
+let tokyo=new LocationShop('Tokyo',3,24,1.2);
+let laim= new LocationShop('Laim',2,16,4.6);
+let dubai = new LocationShop ('Dubai',11,38,3.7);
+let paris = new LocationShop ('Paris',20,38,3.7);
+let arr = [seattle,tokyo,laim,dubai,paris];
+for(let i=0; i<arr.length;i++)
+{
+    arr[i].getCookies();
+    arr[i].render();
+    
+};
