@@ -20,3 +20,8 @@ table {
     color: rgb(61, 32, 65);
     column-rule-style:groove;
   }
+
+  h1{
+    background-color: #a49feb;
+    color: rgb(18, 4, 32);
+  }
