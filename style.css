@@ -39,8 +39,9 @@ margin: 10px;
 .more{
 float:right;
 font-size:30px ;
-font-style: oblique;
-text-decoration:none;
+text-decoration: solid;
+font-style: none;
+
 text-decoration-color: teal;
 font-display:none;
 text-emphasis:none;
