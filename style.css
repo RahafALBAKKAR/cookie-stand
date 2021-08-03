@@ -1,5 +1,8 @@
-#seattle {
+color :{
+background-color: rgb(216, 191, 138);
+}
+text{
     color: blue;
-
-
+    font-size: 10px;
+    font-style: inherit;
 }
