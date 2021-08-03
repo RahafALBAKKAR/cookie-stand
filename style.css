@@ -64,10 +64,22 @@ ul{   list-style-type: square;
     font-size: 30px;
     font-family: serif;
 }
-
+.rate{text-align: left;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+    display:inline-table;
+ 
+    margin: 20px;
+    padding: 10px;
+    gap: 50px;
+    position: relative;
+   
+}
 footer{
     background-color: rgb(197, 179, 196);
     color: rgb(5, 33, 34);
     text-align: center;
     font-size: 30px;
+
 }
