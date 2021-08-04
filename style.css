@@ -1,12 +1,13 @@
 body{
+   margin: auto;
     background-color: rgb(154, 201, 212);
-   width: 2000;
     align-items: center;
     align-content: center;
+    width: 1000px;
 }
 #heead-img{
 
-    width: 2000px;
+
     height: 300px;
     margin: 30px;
 }
@@ -32,7 +33,6 @@ h1{
     color: rgb(15, 49, 44);
     border-style: outset;
     border-width: 10px;
-    position: fixed;
     resize: vertical 100px;
 margin: 10px;
 }
