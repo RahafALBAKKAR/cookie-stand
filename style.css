@@ -1,6 +1,6 @@
 body{
     background-color: rgb(154, 201, 212);
-   
+   width: 2000;
     align-items: center;
     align-content: center;
 }
@@ -84,3 +84,11 @@ footer{
     font-size: 30px;
 
 }
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
