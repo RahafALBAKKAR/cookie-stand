@@ -80,17 +80,19 @@ footer();
 
    
 let addForm=document.getElementById(addForm);
-addForm.addEventListener('submit',nameNew,minNew,maxNew,avgNew)
+addForm.addEventListener('Submit',addNewItem())
 function addNewItem(event){
     event.preventDefult();
 let nameNew =event.target.nameNew.value;
 let minNew =event.target.minNew.value;
 let maxNew =event.target.maxNew.value;
 let avgNew =event.target.avgNew.value;
-let newItem=new LocationShop('name',minNew,maxNew,avgNew); 
-newItem.amount();
-console.log(addNewItem)
+newItem(nameNew,minNew,maxNew,avgNew);
+
 }
 
-
+let newItem=new LocationShop(addNewItem( )); 
+newItem.amount();
+console.log(addNewItem())
+console.log(newItem())
  
