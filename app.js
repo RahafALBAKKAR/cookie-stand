@@ -76,9 +76,6 @@ Dubai.amount();
 Paris.amount();
 lima.amount();
 footer();
-
-//    let addForm=document.getElementById('addForm');
-//   //  articleElement.appendChild(addForm);
    
 addForm.addEventListener('submit',addNewItem);
 function addNewItem(event){
@@ -97,9 +94,3 @@ console.log(event);
 }
 
  
-
-// let addForm=document.getElementById('addForm');
-// addForm.addEventListener('submit',add)
-// function add(event){
-//   event.pre
-// }
