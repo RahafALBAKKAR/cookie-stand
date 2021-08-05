@@ -5,8 +5,7 @@ Profiles.appendChild(articleElement);
 let tableelement = document.createElement('table');
 articleElement.appendChild(tableelement);
 
-
-let hours = ['    ', '6:00am ', '7:00am ', '8:00am ', '9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm ', 'Daily location Total '];
+let hours = ['    ', '6:00am ', '7:00am ', '8:00am ', '9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm ' ,'Daily location Total '];
 let column = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 let row_1 = document.createElement('tr');
@@ -26,6 +25,8 @@ function LocationShop(name, min, max, avg) {
   this.random = 0;
 }
 
+
+/////////////////////////////////////
 LocationShop.prototype.getCookies = function(){
   this.cookiesSales = Math.floor(Math.random() * ((this.max - this.min + 1) + this.min));
   this.cookiesSales = Math.floor(this.cookiesSales * this.avg);
@@ -39,7 +40,7 @@ LocationShop.prototype.amount = function () {
   let th_1 = document.createElement('td');
   th_1.textContent = this.location;
   row_2.appendChild(th_1);
-  for (let i = 1; i <hours.length - 1; i++) {
+  for (let i = 1; i <hours.length-1; i++) {
     this.random = this.getCookies()
     column[i] += this.random
     let tdElement = document.createElement('td');
@@ -68,10 +69,31 @@ let tokyo = new LocationShop('tokyo', 3, 24, 1.2);
 let Dubai = new LocationShop ('Dubai', 11, 38, 3.7);
 let Paris = new LocationShop ('Paris', 20, 38, 2.3);
 let lima = new LocationShop ('lima', 2, 16, 4.6);
+
 seattle.amount();
 tokyo.amount();
 Dubai.amount();
 Paris.amount();
 lima.amount();
 footer();
+
+   let addForm=document.getElementById(addForm)
+   tableelement.appendChild(addForm);
+   
+addForm.addEventListener('Submit',addNewItem())
+function addNewItem(event){
+    event.preventDefult();
+let nameNew =event.target.nameNew.value;
+let minNew =event.target.minNew.value;
+let maxNew =event.target.maxNew.value;
+let avgNew =event.target.avgNew.value;
+let newItem = new LocationShop(nameNew,minNew,maxNew,avgNew);
+newItem.amount();
+footer();
+}
+ for(let i=0 ; i<hours.length;i++){
+  footer();
+ let row = table.insertRow(-1);
+
+ }
 
