@@ -77,23 +77,29 @@ Paris.amount();
 lima.amount();
 footer();
 
-   let addForm=document.getElementById(addForm)
-   tableelement.appendChild(addForm);
+//    let addForm=document.getElementById('addForm');
+//   //  articleElement.appendChild(addForm);
    
-addForm.addEventListener('Submit',addNewItem())
+addForm.addEventListener('submit',addNewItem);
 function addNewItem(event){
-    event.preventDefult();
-let nameNew =event.target.nameNew.value;
-let minNew =event.target.minNew.value;
-let maxNew =event.target.maxNew.value;
-let avgNew =event.target.avgNew.value;
-let newItem = new LocationShop(nameNew,minNew,maxNew,avgNew);
-newItem.amount();
+    event.preventDefault();
+   
+let nNew =event.target.nameNew.value;
+let mNew =event.target.minNew.value;
+let mxNew =event.target.maxNew.value;
+let aNew =event.target.avgNew.value;
+tableelement.deleteRow(-1);
+
+let newlocation = new LocationShop(nNew,mNew,mxNew,aNew);
+newlocation.amount();
 footer();
+console.log(event);
 }
- for(let i=0 ; i<hours.length;i++){
-  footer();
- let row = table.insertRow(-1);
 
- }
+ 
 
+// let addForm=document.getElementById('addForm');
+// addForm.addEventListener('submit',add)
+// function add(event){
+//   event.pre
+// }
