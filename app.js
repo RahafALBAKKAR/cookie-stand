@@ -78,6 +78,7 @@ lima.amount();
 footer();
 
    let addForm=document.getElementById(addForm)
+   tableelement.appendChild(addForm);
    
 addForm.addEventListener('Submit',addNewItem())
 function addNewItem(event){
@@ -88,16 +89,11 @@ let maxNew =event.target.maxNew.value;
 let avgNew =event.target.avgNew.value;
 let newItem = new LocationShop(nameNew,minNew,maxNew,avgNew);
 newItem.amount();
-}
-console.log(addNewItem());
-let newArray=[addNewItem()];
-// let newItem=new LocationShop(addNewItem( )); 
-// newItem.amount();
-for(let i=0 ; i<newArray.length;i++){
-  if(addNewItem()){HTMLTableElement.deleteRow(-1)}
-  let row = table.insertRow(-1);
-  th.textContent = newArray[i];
-  tableelement.appendChild(row);
 footer();
 }
+ for(let i=0 ; i<hours.length;i++){
+  footer();
+ let row = table.insertRow(-1);
+
+ }
 
