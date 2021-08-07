@@ -21,12 +21,10 @@ function LocationShop(name, min, max, avg) {
   this.max = max;
   this.avg = avg;
   this.total = 0;
-  this.cookiesSales = 0;
-  this.random = 0;
+  this.cookiesSales= 0;
+  this.random= 0;
 }
 
-
-/////////////////////////////////////
 LocationShop.prototype.getCookies = function(){
   this.cookiesSales = Math.floor(Math.random() * ((this.max - this.min + 1) + this.min));
   this.cookiesSales = Math.floor(this.cookiesSales * this.avg);
@@ -42,7 +40,7 @@ LocationShop.prototype.amount = function () {
   row_2.appendChild(th_1);
   for (let i = 1; i <hours.length-1; i++) {
     this.random = this.getCookies()
-    column[i] += this.random
+    column[i] += this.random;
     let tdElement = document.createElement('td');
     tdElement.textContent = this.random;
     row_2.appendChild(tdElement);
@@ -76,7 +74,7 @@ Dubai.amount();
 Paris.amount();
 lima.amount();
 footer();
-   
+
 addForm.addEventListener('submit',addNewItem);
 function addNewItem(event){
     event.preventDefault();
@@ -85,12 +83,12 @@ let nNew =event.target.nameNew.value;
 let mNew =event.target.minNew.value;
 let mxNew =event.target.maxNew.value;
 let aNew =event.target.avgNew.value;
-tableelement.deleteRow(-1);
 
+tableelement.deleteRow(-1);
 let newlocation = new LocationShop(nNew,mNew,mxNew,aNew);
 newlocation.amount();
 footer();
+
 console.log(event);
 }
 
- 
