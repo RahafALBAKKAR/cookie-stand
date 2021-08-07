@@ -59,8 +59,7 @@ a:hover{background-color: #dd9898;}
 
 table {
     border:rgb(53, 20, 20);
-    bo
-    width: 100%;
+    width:100%;
   }
   
   th, td {
@@ -83,4 +82,4 @@ table {
     background-color: #dd9898;
     color: rgb(53, 36, 36);
   }
-  }
+  
