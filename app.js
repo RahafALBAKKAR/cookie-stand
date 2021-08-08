@@ -25,12 +25,20 @@ function LocationShop(name, min, max, avg) {
   this.random= 0;
 }
 
-LocationShop.prototype.getCookies = function(){
-  this.cookiesSales = Math.floor(Math.random() * ((this.max - this.min + 1) + this.min));
-  this.cookiesSales = Math.floor(this.cookiesSales * this.avg);
+ LocationShop.prototype.getCookies = function(){
+  min = Math.ceil(this.min);
+  max = Math.floor(this.max);
+   this.cookiesSales = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+   this.cookiesSales = Math.floor(this.cookiesSales * this.avg);
   this.total = this.total + this.cookiesSales;
-  return this.cookiesSales;
+ return this.cookiesSales;
 };
+// LocationShop.prototype.getCookies = function () {
+//   min = Math.ceil(this.min);
+//   max = Math.floor(this.max);
+//   return Math.floor(Math.random() * (this.max - this.min) + this.min); //The maximum is exclusive and the minimum is inclusive
+// }
+
 
 LocationShop.prototype.amount = function () {
   let row_2 = document.createElement('tr');
